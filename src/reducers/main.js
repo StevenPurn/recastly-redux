@@ -2,7 +2,12 @@ import { combineReducers } from 'redux';
 import currentVideo from './currentVideo.js';
 import videoList from './videoList.js';
 
-var rootReducer = () => {};
+var rootReducer = (state = { videoList: [], currentVideo: null }, action) => {
+  return combineReducers({
+    currentVideo: currentVideo,
+    videoList: videoList,
+  });
+};
 
 //TODO: define the root reducer for this app
 
@@ -10,4 +15,7 @@ var rootReducer = () => {};
 //  app into a single reducer using the 'combineReducers' method
 //  listed above.
 
-export default rootReducer;
+export default combineReducers({
+  currentVideo: currentVideo,
+  videoList: videoList,
+});
