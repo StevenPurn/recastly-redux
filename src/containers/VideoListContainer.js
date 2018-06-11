@@ -13,13 +13,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleVideoListEntryTitleClick: (videos) => dispatch({
+    handleVideoListEntryTitleClick: (video) => dispatch({
       type: 'CHANGE_VIDEO',
+      video: video
     })
   };
 };
 
-//TODO: define a VideoListContainer component which will hook up your action
-// dispatchers with your VideoList component props.
-
-export default connect(mapStateToProps, mapDispatchToProps)(VideoList);;
+export default connect(mapStateToProps, mapDispatchToProps)(VideoList);
